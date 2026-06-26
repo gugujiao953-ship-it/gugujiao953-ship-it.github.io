@@ -1,0 +1,322 @@
+:root {
+  --bg: #f5f5f0;
+  --panel: #ffffff;
+  --text: #1d1d1d;
+  --muted: #565656;
+  --line: #dddddd;
+  --accent: #274f7a;
+  --accent-soft: #f4f8fc;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans SC", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  color: inherit;
+}
+
+.page-shell {
+  width: min(1080px, calc(100% - 32px));
+  margin: 20px auto 48px;
+}
+
+.hero,
+.section {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  box-shadow: var(--shadow);
+}
+
+.hero {
+  padding: 26px 28px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.brand,
+.eyebrow,
+.timeline-meta,
+.news-date,
+.section-heading h2,
+h1,
+h3 {
+  font-family: "Space Grotesk", "Noto Sans SC", sans-serif;
+}
+
+.brand {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.top-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.top-link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.top-link:hover,
+.hero-links a:hover,
+.contact-link a:hover {
+  text-decoration: underline;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.profile-card {
+  padding-right: 28px;
+  border-right: 1px solid var(--line);
+}
+
+.avatar {
+  display: block;
+  width: 156px;
+  height: 156px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 18px;
+  border: 1px solid var(--line);
+}
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+.profile-title,
+.profile-subtitle,
+.section-text,
+.lead,
+.timeline-content p,
+.list-main p,
+.plain-list,
+.profile-meta {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.profile-title,
+.profile-subtitle {
+  margin: 0 0 6px;
+  font-size: 0.98rem;
+}
+
+.profile-meta {
+  margin: 18px 0 0;
+  padding-left: 18px;
+}
+
+.hero-links {
+  margin-top: 18px;
+}
+
+.hero-links a,
+.contact-link a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.lead {
+  margin: 0 0 14px;
+}
+
+.hero-note {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.main-layout {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.section {
+  padding: 24px 28px;
+}
+
+.section-heading {
+  margin-bottom: 14px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.section-body {
+  display: grid;
+  gap: 12px;
+}
+
+.list-item,
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.list-item:first-child,
+.timeline-item:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.list-main h3,
+.timeline-content h3 {
+  margin: 0 0 6px;
+  font-size: 1.08rem;
+}
+
+.list-main p,
+.timeline-role {
+  margin: 0;
+}
+
+.list-side {
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.timeline {
+  display: grid;
+}
+
+.timeline-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  width: 170px;
+  padding-top: 4px;
+}
+
+.timeline-content p {
+  margin: 6px 0 0;
+}
+
+.news-list,
+.plain-list,
+.skill-list {
+  margin: 0;
+}
+
+.news-list {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.news-list li {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 16px;
+  padding: 8px 0;
+  border-top: 1px solid var(--line);
+}
+
+.news-list li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.news-date {
+  color: var(--accent);
+  font-size: 0.92rem;
+}
+
+.plain-list {
+  padding-left: 20px;
+}
+
+.compact {
+  margin-top: 0;
+}
+
+@media (max-width: 900px) {
+  .hero-grid,
+  .list-item,
+  .timeline-item,
+  .news-list li {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    padding-right: 0;
+    padding-bottom: 20px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-meta {
+    width: auto;
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-shell {
+    width: min(100% - 20px, 1080px);
+    margin: 10px auto 28px;
+  }
+
+  .hero,
+  .section {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.72rem;
+  }
+
+  .section-heading h2 {
+    font-size: 1.4rem;
+  }
+}
