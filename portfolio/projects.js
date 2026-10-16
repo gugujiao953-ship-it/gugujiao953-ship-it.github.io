@@ -1124,3 +1124,23 @@ window.PORTFOLIO_PROJECTS = [
     "compact": true
   }
 ];
+
+const PORTFOLIO_PROJECT_ORDER = [
+  "banbu",
+  "starlight",
+  "yipin",
+  "yingxian",
+  "miao",
+  "tunbao",
+  "xiaoman",
+  "nuo",
+  "moon",
+  "molly",
+  "family",
+  "photography"
+];
+
+window.PORTFOLIO_PROJECTS = PORTFOLIO_PROJECT_ORDER.map((id, index) => {
+  const project = window.PORTFOLIO_PROJECTS.find(item => item.id === id);
+  return { ...project, number: String(index + 1).padStart(2, "0") };
+});
