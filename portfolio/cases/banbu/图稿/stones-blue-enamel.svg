@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="510" height="280" viewBox="0 0 510 280"><defs>
+      <linearGradient id="blue-enamel-base" x1="0" y1="0" x2=".8" y2="1">
+        <stop offset="0" stop-color="#2a56a8"/><stop offset=".35" stop-color="#1b3d84"/>
+        <stop offset=".7" stop-color="#132c66"/><stop offset="1" stop-color="#0c1e4a"/>
+      </linearGradient>
+      <radialGradient id="blue-enamel-glowA" cx="26%" cy="18%" r="64%">
+        <stop offset="0" stop-color="#a8c8ff" stop-opacity=".38"/>
+        <stop offset=".52" stop-color="#4a72c8" stop-opacity=".15"/>
+        <stop offset="1" stop-color="#0c1e4a" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="blue-enamel-glowB" cx="84%" cy="88%" r="60%">
+        <stop offset="0" stop-color="#0a1a44" stop-opacity=".52"/>
+        <stop offset="1" stop-color="#0c1e4a" stop-opacity="0"/>
+      </radialGradient>
+      <!-- 珐琅釉光：一道宽的斜向反光带 -->
+      <linearGradient id="blue-enamel-glaze" x1="0" y1="0" x2=".65" y2="1">
+        <stop offset="0" stop-color="#ffffff" stop-opacity=".22"/>
+        <stop offset=".22" stop-color="#dceaff" stop-opacity=".11"/>
+        <stop offset=".42" stop-color="#ffffff" stop-opacity="0"/>
+        <stop offset=".8" stop-color="#ffffff" stop-opacity="0"/>
+      </linearGradient>
+      <!-- 青花叠色：深浅两遍蓝的笔触感 -->
+      <pattern id="blue-enamel-cobalt" width="44" height="44" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)">
+        <path d="M2 8q11 -7 22 0t22 0" fill="none" stroke="#4a78d0" stroke-width="2.6" opacity=".11"/>
+        <path d="M0 30q11 -7 22 0t22 0" fill="none" stroke="#7fa4e8" stroke-width="1.6" opacity=".09"/>
+      </pattern>
+      <filter id="blue-enamel-soft" x="-8%" y="-8%" width="116%" height="116%">
+        <feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="2" seed="13" result="w"/>
+        <feDisplacementMap in="SourceGraphic" in2="w" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <radialGradient id="blue-enamel-Black" cx="34%" cy="24%" r="78%">
+        <stop offset="0" stop-color="#5c8af0"/><stop offset=".26" stop-color="#1e3a7e"/>
+        <stop offset=".62" stop-color="#102552"/><stop offset="1" stop-color="#081638"/>
+      </radialGradient>
+      <radialGradient id="blue-enamel-White" cx="34%" cy="24%" r="76%">
+        <stop offset="0" stop-color="#ffffff"/><stop offset=".30" stop-color="#f4f7ff"/>
+        <stop offset=".66" stop-color="#d4dff8"/><stop offset="1" stop-color="#9db2e0"/>
+      </radialGradient>
+    </defs><ellipse cx="135" cy="157" rx="83.3" ry="78.2" fill="#000" opacity="0.34"/><circle cx="135" cy="140" r="85" fill="url(#blue-enamel-Black)"/><circle cx="135" cy="140" r="85" fill="none" stroke="rgba(150,190,240,.30)" stroke-width="0.9"/><ellipse cx="106.1" cy="107.7" rx="25.5" ry="16.15" fill="#e0ecff" opacity="0.82" transform="rotate(-32 106.1 107.7)"/><ellipse cx="145.2" cy="184.2" rx="35.699999999999996" ry="13.6" fill="#3a68e0" opacity="0.22"/><ellipse cx="375" cy="157" rx="83.3" ry="78.2" fill="#000" opacity="0.34"/><circle cx="375" cy="140" r="85" fill="url(#blue-enamel-White)"/><circle cx="375" cy="140" r="85" fill="none" stroke="rgba(120,160,215,.42)" stroke-width="0.9"/><ellipse cx="346.95" cy="109.4" rx="22.1" ry="14.450000000000001" fill="#ffffff" opacity="0.95" transform="rotate(-32 346.95 109.4)"/><ellipse cx="388.6" cy="179.1" rx="34" ry="17" fill="#a8c2f4" opacity="0.5"/></svg>

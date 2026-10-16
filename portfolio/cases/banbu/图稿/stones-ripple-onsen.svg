@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="510" height="280" viewBox="0 0 510 280"><defs>
+      <linearGradient id="ripple-onsen-base" x1=".15" y1="0" x2=".85" y2="1">
+        <stop offset="0" stop-color="#3f736e"/><stop offset=".38" stop-color="#325f5e"/>
+        <stop offset=".74" stop-color="#224a4c"/><stop offset="1" stop-color="#173638"/>
+      </linearGradient>
+      <radialGradient id="ripple-onsen-warm" cx="42%" cy="30%" r="62%">
+        <stop offset="0" stop-color="#d8f0e8" stop-opacity=".3"/>
+        <stop offset=".5" stop-color="#8fc4bc" stop-opacity=".11"/>
+        <stop offset="1" stop-color="#2b5658" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="ripple-onsen-deep" cx="62%" cy="82%" r="58%">
+        <stop offset="0" stop-color="#173638" stop-opacity=".55"/>
+        <stop offset="1" stop-color="#2b5658" stop-opacity="0"/>
+      </radialGradient>
+      <!-- ★ 温泉水比溪水浑，折射更「软」、位移略大 -->
+      <filter id="ripple-onsen-refract" x="-7%" y="-7%" width="114%" height="114%">
+        <feTurbulence type="fractalNoise" baseFrequency=".013 .026" numOctaves="3" seed="51" result="w"/>
+        <feDisplacementMap in="SourceGraphic" in2="w" scale="5.8" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <!-- 水面暖雾：大团、极淡的柔光斑（不是圈） -->
+      <pattern id="ripple-onsen-haze" width="130" height="130" patternUnits="userSpaceOnUse">
+        <ellipse cx="40" cy="46" rx="34" ry="24" fill="#ffffff" opacity=".05"/>
+        <ellipse cx="94" cy="98" rx="28" ry="19" fill="#eafaf6" opacity=".042"/>
+      </pattern>
+      <pattern id="ripple-onsen-haze2" width="180" height="180" patternUnits="userSpaceOnUse">
+        <ellipse cx="64" cy="70" rx="48" ry="32" fill="#d8f2ec" opacity=".042"/>
+        <ellipse cx="140" cy="28" rx="34" ry="22" fill="#ffffff" opacity=".036"/>
+      </pattern>
+      <!-- 蒸汽上升的竖条（极淡） -->
+      <pattern id="ripple-onsen-steam" width="54" height="120" patternUnits="userSpaceOnUse">
+        <path d="M14 120Q26 90 14 62T14 0" fill="none" stroke="#ffffff" stroke-width="6" opacity=".05"/>
+        <path d="M40 120Q28 88 40 58T40 0" fill="none" stroke="#eafaf6" stroke-width="4.4" opacity=".04"/>
+      </pattern>
+      <linearGradient id="ripple-onsen-glint" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+        <stop offset=".44" stop-color="#f4fffb" stop-opacity=".18"/>
+        <stop offset=".58" stop-color="#ffffff" stop-opacity=".20"/>
+        <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+      </linearGradient>
+      <filter id="ripple-onsen-Wet" x="-40%" y="-40%" width="180%" height="180%">
+        <feTurbulence type="fractalNoise" baseFrequency=".05" numOctaves="2" seed="7" result="n"/>
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="1.3" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <radialGradient id="ripple-onsen-Black" cx="32%" cy="24%" r="76%">
+        <stop offset="0" stop-color="#6fa8a2"/><stop offset=".30" stop-color="#3a6a68"/>
+        <stop offset=".68" stop-color="#26484a"/><stop offset="1" stop-color="#183638"/>
+      </radialGradient>
+      <radialGradient id="ripple-onsen-White" cx="32%" cy="24%" r="76%">
+        <stop offset="0" stop-color="#ffffff"/><stop offset=".38" stop-color="#f6fffd"/>
+        <stop offset=".72" stop-color="#d8efea"/><stop offset="1" stop-color="#a8cfc9"/>
+      </radialGradient>
+    </defs><ellipse cx="135" cy="162.1" rx="86.7" ry="71.39999999999999" fill="#0d2324" opacity="0.42"/><circle cx="135" cy="140" r="85" fill="url(#ripple-onsen-Black)" filter="url(#ripple-onsen-Wet)"/><circle cx="135" cy="140" r="85" fill="none" stroke="rgba(160,215,235,.32)" stroke-width="0.9" opacity="0.7" filter="url(#ripple-onsen-Wet)"/><ellipse cx="107.8" cy="109.4" rx="25.5" ry="15.299999999999999" fill="#eafff9" opacity="0.7" transform="rotate(-34 107.8 109.4)"/><ellipse cx="143.5" cy="185.9" rx="37.4" ry="12.75" fill="#6fc0b4" opacity="0.24"/><path d="M68.7 111.1Q135 24.39999999999999 201.3 111.1" fill="none" stroke="#ffffff" stroke-width="9.775" opacity="0.5" stroke-linecap="round"/><ellipse cx="375" cy="162.1" rx="86.7" ry="71.39999999999999" fill="#0d2324" opacity="0.42"/><circle cx="375" cy="140" r="85" fill="url(#ripple-onsen-White)" filter="url(#ripple-onsen-Wet)"/><circle cx="375" cy="140" r="85" fill="none" stroke="rgba(110,170,200,.46)" stroke-width="0.9" opacity="0.7" filter="url(#ripple-onsen-Wet)"/><ellipse cx="348.65" cy="110.25" rx="22.950000000000003" ry="13.6" fill="#ffffff" opacity="0.95" transform="rotate(-34 348.65 110.25)"/><ellipse cx="386.9" cy="180.8" rx="34" ry="15.299999999999999" fill="#6fc0b4" opacity="0.24"/><path d="M308.7 111.1Q375 24.39999999999999 441.3 111.1" fill="none" stroke="#ffffff" stroke-width="9.775" opacity="0.5" stroke-linecap="round"/></svg>

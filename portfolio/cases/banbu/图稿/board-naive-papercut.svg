@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="620" viewBox="0 0 620 620"><defs>
+        <filter id="naive-papercut-wob" x="-30%" y="-30%" width="160%" height="160%">
+       <feTurbulence type="fractalNoise" baseFrequency=".013" numOctaves="2" seed="1011" result="w"/>
+       <feDisplacementMap in="SourceGraphic" in2="w" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+     </filter>
+        <filter id="naive-papercut-wob2" x="-30%" y="-30%" width="160%" height="160%">
+       <feTurbulence type="fractalNoise" baseFrequency=".026" numOctaves="2" seed="1022" result="w"/>
+       <feDisplacementMap in="SourceGraphic" in2="w" scale="2.6" xChannelSelector="R" yChannelSelector="G"/>
+     </filter>
+        
+    <filter id="naive-papercut-grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".78" numOctaves="2" seed="148"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".08"/></feComponentTransfer>
+    </filter>
+        <!-- 窗纸底色：用**陈年窗纸的赭黄**，不是亮米白。
+             两个理由：① 白子贴米白底上实测只有 1.87，看不见；
+             ② 红纸筋压在赭黄上，明度差才拉得开（红 relLum≈.11 vs 底≈.45 → 3.3:1）。 -->
+        <radialGradient id="naive-papercut-lit" cx="42%" cy="36%" r="82%">
+          <stop offset="0" stop-color="#c9b189"/><stop offset=".6" stop-color="#b1966f"/>
+          <stop offset="1" stop-color="#8b7454"/>
+        </radialGradient>
+        <linearGradient id="naive-papercut-base" x1="0" y1="0" x2=".5" y2="1">
+          <stop offset="0" stop-color="#c2a97f"/><stop offset="1" stop-color="#98805c"/>
+        </linearGradient>
+      </defs><rect width="620" height="620" rx="16" fill="url(#naive-papercut-lit)"/>
+        <rect width="620" height="620" fill="url(#naive-papercut-lit)"/>
+        <!-- 切口阴影：格线（纸筋）边缘压一道淡影，显出纸的厚度 -->
+        <g opacity=".17" filter="url(#naive-papercut-wob)"><path d="M46 46H574M46 46V574M46 83.71428571428572H574M83.71428571428572 46V574M46 121.42857142857143H574M121.42857142857143 46V574M46 159.14285714285714H574M159.14285714285714 46V574M46 196.85714285714286H574M196.85714285714286 46V574M46 234.57142857142858H574M234.57142857142858 46V574M46 272.2857142857143H574M272.2857142857143 46V574M46 310H574M310 46V574M46 347.7142857142857H574M347.7142857142857 46V574M46 385.42857142857144H574M385.42857142857144 46V574M46 423.14285714285717H574M423.14285714285717 46V574M46 460.8571428571429H574M460.8571428571429 46V574M46 498.57142857142856H574M498.57142857142856 46V574M46 536.2857142857142H574M536.2857142857142 46V574M46 574H574M574 46V574" fill="none" stroke="#7a2a1e" stroke-width="6.6" stroke-linecap="square"/></g>
+        <!-- 折叠团花：棋盘正中一枚 8 折大团花。
+             ⚠ 结构拆成「外层 class + 内层 filter」两层，**动画只挂外层**
+               （同 dh-feitian 的团花）：直接给挂着 feTurbulence 的组做 transform，
+               等于每帧重跑那张噪声图。滤镜挪进内层后内层 bbox 与原来逐字相同，
+               滤镜区/渲染结果都不变 —— 只是外面多了一个能搬动的壳。 -->
+        <g class="naive-papercut-rosette">
+          <g filter="url(#naive-papercut-wob)"><g transform="rotate(0.0 310 310)"><path d="M345.1 305.6L353.0 310.0L345.1 314.4ZM357.3 304.0L365.3 310.0L357.3 316.0ZM369.5 302.5L377.6 310.0L369.5 317.5ZM381.6 300.9L389.8 310.0L381.6 319.1ZM393.8 299.4L402.1 310.0L393.8 320.6Z" fill="#c4141c"/>
+        <path d="M408.7 286.3
+        A101.48 101.48 0 0 1 408.7 333.7
+        A89.68 89.68 0 0 0 399.0 299.3 Z" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="6.5" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="2.8" fill="#fdf7ea"/></g><g transform="rotate(45.0 310 310)"><path d="M345.1 305.6L353.0 310.0L345.1 314.4ZM357.3 304.0L365.3 310.0L357.3 316.0ZM369.5 302.5L377.6 310.0L369.5 317.5ZM381.6 300.9L389.8 310.0L381.6 319.1ZM393.8 299.4L402.1 310.0L393.8 320.6Z" fill="#c4141c"/>
+        <path d="M408.7 286.3
+        A101.48 101.48 0 0 1 408.7 333.7
+        A89.68 89.68 0 0 0 399.0 299.3 Z" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="6.5" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="2.8" fill="#fdf7ea"/></g><g transform="rotate(90.0 310 310)"><path d="M345.1 305.6L353.0 310.0L345.1 314.4ZM357.3 304.0L365.3 310.0L357.3 316.0ZM369.5 302.5L377.6 310.0L369.5 317.5ZM381.6 300.9L389.8 310.0L381.6 319.1ZM393.8 299.4L402.1 310.0L393.8 320.6Z" fill="#c4141c"/>
+        <path d="M408.7 286.3
+        A101.48 101.48 0 0 1 408.7 333.7
+        A89.68 89.68 0 0 0 399.0 299.3 Z" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="6.5" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="2.8" fill="#fdf7ea"/></g><g transform="rotate(135.0 310 310)"><path d="M345.1 305.6L353.0 310.0L345.1 314.4ZM357.3 304.0L365.3 310.0L357.3 316.0ZM369.5 302.5L377.6 310.0L369.5 317.5ZM381.6 300.9L389.8 310.0L381.6 319.1ZM393.8 299.4L402.1 310.0L393.8 320.6Z" fill="#c4141c"/>
+        <path d="M408.7 286.3
+        A101.48 101.48 0 0 1 408.7 333.7
+        A89.68 89.68 0 0 0 399.0 299.3 Z" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="6.5" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="2.8" fill="#fdf7ea"/></g><g transform="rotate(180.0 310 310)"><path d="M345.1 305.6L353.0 310.0L345.1 314.4ZM357.3 304.0L365.3 310.0L357.3 316.0ZM369.5 302.5L377.6 310.0L369.5 317.5ZM381.6 300.9L389.8 310.0L381.6 319.1ZM393.8 299.4L402.1 310.0L393.8 320.6Z" fill="#c4141c"/>
+        <path d="M408.7 286.3
+        A101.48 101.48 0 0 1 408.7 333.7
+        A89.68 89.68 0 0 0 399.0 299.3 Z" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="6.5" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="2.8" fill="#fdf7ea"/></g><g transform="rotate(225.0 310 310)"><path d="M345.1 305.6L353.0 310.0L345.1 314.4ZM357.3 304.0L365.3 310.0L357.3 316.0ZM369.5 302.5L377.6 310.0L369.5 317.5ZM381.6 300.9L389.8 310.0L381.6 319.1ZM393.8 299.4L402.1 310.0L393.8 320.6Z" fill="#c4141c"/>
+        <path d="M408.7 286.3
+        A101.48 101.48 0 0 1 408.7 333.7
+        A89.68 89.68 0 0 0 399.0 299.3 Z" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="6.5" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="2.8" fill="#fdf7ea"/></g><g transform="rotate(270.0 310 310)"><path d="M345.1 305.6L353.0 310.0L345.1 314.4ZM357.3 304.0L365.3 310.0L357.3 316.0ZM369.5 302.5L377.6 310.0L369.5 317.5ZM381.6 300.9L389.8 310.0L381.6 319.1ZM393.8 299.4L402.1 310.0L393.8 320.6Z" fill="#c4141c"/>
+        <path d="M408.7 286.3
+        A101.48 101.48 0 0 1 408.7 333.7
+        A89.68 89.68 0 0 0 399.0 299.3 Z" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="6.5" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="2.8" fill="#fdf7ea"/></g><g transform="rotate(315.0 310 310)"><path d="M345.1 305.6L353.0 310.0L345.1 314.4ZM357.3 304.0L365.3 310.0L357.3 316.0ZM369.5 302.5L377.6 310.0L369.5 317.5ZM381.6 300.9L389.8 310.0L381.6 319.1ZM393.8 299.4L402.1 310.0L393.8 320.6Z" fill="#c4141c"/>
+        <path d="M408.7 286.3
+        A101.48 101.48 0 0 1 408.7 333.7
+        A89.68 89.68 0 0 0 399.0 299.3 Z" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="6.5" fill="#c4141c"/>
+        <circle cx="383.2" cy="310.0" r="2.8" fill="#fdf7ea"/></g><circle cx="310" cy="310" r="23.6" fill="none" stroke="#c4141c" stroke-width="8.3"/><circle cx="310" cy="310" r="8.8" fill="#c4141c"/><circle cx="310" cy="310" r="118.0" fill="none" stroke="#c4141c" stroke-width="5.9"/></g>
+        </g>
+        <!-- 四角角花（对折剪）：同样「外层摆 / 内层滤镜」，理由见团花那段 -->
+        <g class="naive-papercut-corner">
+          <g fill="#c4141c" filter="url(#naive-papercut-wob)">
+            <ellipse cx="94.4" cy="53.6" rx="12.0" ry="6.0"
+                transform="rotate(-45 94.4 53.6)"/><circle cx="89.5" cy="67.6" r="3.6" fill="#fdf7ea"/><ellipse cx="102.8" cy="74.0" rx="12.0" ry="6.0"
+                transform="rotate(0 102.8 74.0)"/><circle cx="89.5" cy="80.4" r="3.6" fill="#fdf7ea"/><ellipse cx="94.4" cy="94.4" rx="12.0" ry="6.0"
+                transform="rotate(45 94.4 94.4)"/><circle cx="80.4" cy="89.5" r="3.6" fill="#fdf7ea"/><ellipse cx="74.0" cy="102.8" rx="12.0" ry="6.0"
+                transform="rotate(90 74.0 102.8)"/><circle cx="67.6" cy="89.5" r="3.6" fill="#fdf7ea"/><circle cx="74" cy="74" r="6.4"/><circle cx="74" cy="74" r="11.2" fill="none" stroke="#c4141c" stroke-width="2.0"/>
+            <ellipse cx="566.4" cy="53.6" rx="12.0" ry="6.0"
+                transform="rotate(-45 566.4 53.6)"/><circle cx="561.5" cy="67.6" r="3.6" fill="#fdf7ea"/><ellipse cx="574.8" cy="74.0" rx="12.0" ry="6.0"
+                transform="rotate(0 574.8 74.0)"/><circle cx="561.5" cy="80.4" r="3.6" fill="#fdf7ea"/><ellipse cx="566.4" cy="94.4" rx="12.0" ry="6.0"
+                transform="rotate(45 566.4 94.4)"/><circle cx="552.4" cy="89.5" r="3.6" fill="#fdf7ea"/><ellipse cx="546.0" cy="102.8" rx="12.0" ry="6.0"
+                transform="rotate(90 546.0 102.8)"/><circle cx="539.6" cy="89.5" r="3.6" fill="#fdf7ea"/><circle cx="546" cy="74" r="6.4"/><circle cx="546" cy="74" r="11.2" fill="none" stroke="#c4141c" stroke-width="2.0"/>
+            <ellipse cx="94.4" cy="525.6" rx="12.0" ry="6.0"
+                transform="rotate(-45 94.4 525.6)"/><circle cx="89.5" cy="539.6" r="3.6" fill="#fdf7ea"/><ellipse cx="102.8" cy="546.0" rx="12.0" ry="6.0"
+                transform="rotate(0 102.8 546.0)"/><circle cx="89.5" cy="552.4" r="3.6" fill="#fdf7ea"/><ellipse cx="94.4" cy="566.4" rx="12.0" ry="6.0"
+                transform="rotate(45 94.4 566.4)"/><circle cx="80.4" cy="561.5" r="3.6" fill="#fdf7ea"/><ellipse cx="74.0" cy="574.8" rx="12.0" ry="6.0"
+                transform="rotate(90 74.0 574.8)"/><circle cx="67.6" cy="561.5" r="3.6" fill="#fdf7ea"/><circle cx="74" cy="546" r="6.4"/><circle cx="74" cy="546" r="11.2" fill="none" stroke="#c4141c" stroke-width="2.0"/>
+            <ellipse cx="566.4" cy="525.6" rx="12.0" ry="6.0"
+                transform="rotate(-45 566.4 525.6)"/><circle cx="561.5" cy="539.6" r="3.6" fill="#fdf7ea"/><ellipse cx="574.8" cy="546.0" rx="12.0" ry="6.0"
+                transform="rotate(0 574.8 546.0)"/><circle cx="561.5" cy="552.4" r="3.6" fill="#fdf7ea"/><ellipse cx="566.4" cy="566.4" rx="12.0" ry="6.0"
+                transform="rotate(45 566.4 566.4)"/><circle cx="552.4" cy="561.5" r="3.6" fill="#fdf7ea"/><ellipse cx="546.0" cy="574.8" rx="12.0" ry="6.0"
+                transform="rotate(90 546.0 574.8)"/><circle cx="539.6" cy="561.5" r="3.6" fill="#fdf7ea"/><circle cx="546" cy="546" r="6.4"/><circle cx="546" cy="546" r="11.2" fill="none" stroke="#c4141c" stroke-width="2.0"/>
+          </g>
+        </g>
+        <rect width="620" height="620" filter="url(#naive-papercut-grain)" opacity=".34"/>
+      <path d="M42 42H578 M42 42V578 M42 80.28571428571428H578 M80.28571428571428 42V578 M42 118.57142857142857H578 M118.57142857142857 42V578 M42 156.85714285714286H578 M156.85714285714286 42V578 M42 195.14285714285714H578 M195.14285714285714 42V578 M42 233.42857142857142H578 M233.42857142857142 42V578 M42 271.7142857142857H578 M271.7142857142857 42V578 M42 310H578 M310 42V578 M42 348.2857142857143H578 M348.2857142857143 42V578 M42 386.57142857142856H578 M386.57142857142856 42V578 M42 424.85714285714283H578 M424.85714285714283 42V578 M42 463.14285714285717H578 M463.14285714285717 42V578 M42 501.42857142857144H578 M501.42857142857144 42V578 M42 539.7142857142858H578 M539.7142857142858 42V578 M42 578H578 M578 42V578 " fill="none" stroke="#c4141c" stroke-width="4.4" opacity="0.92"/><circle cx="156.85714285714286" cy="156.85714285714286" r="5.6" fill="#c4141c"/><circle cx="156.85714285714286" cy="463.14285714285717" r="5.6" fill="#c4141c"/><circle cx="463.14285714285717" cy="156.85714285714286" r="5.6" fill="#c4141c"/><circle cx="463.14285714285717" cy="463.14285714285717" r="5.6" fill="#c4141c"/><circle cx="310" cy="310" r="5.6" fill="#c4141c"/></svg>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="510" height="280" viewBox="0 0 510 280"><defs>
+        <!-- 盘面：墨青石（四档渐变）。比上一版亮半档、冷半档 —— 参考图里
+             盘就是"比背景亮三四档的中性灰"，压暗它等于把主体埋进墨里。 -->
+        <linearGradient id="soul-inkflame-board" x1="0" y1="0" x2=".72" y2="1">
+          <stop offset="0" stop-color="#5b6167"/><stop offset=".38" stop-color="#4d535a"/>
+          <stop offset=".74" stop-color="#41474d"/><stop offset="1" stop-color="#383e44"/>
+        </linearGradient>
+        <!-- 中央气眼：**多档渐隐**（上一版只有两档，边缘有一圈看得见的界，
+             就是"不通透"的来源之一）。 -->
+        <radialGradient id="soul-inkflame-spot" cx="50%" cy="44%" r="66%">
+          <stop offset="0" stop-color="#8d99a3" stop-opacity=".30"/>
+          <stop offset=".42" stop-color="#6f7981" stop-opacity=".16"/>
+          <stop offset=".72" stop-color="#545b62" stop-opacity=".06"/>
+          <stop offset="1" stop-color="#2b2f34" stop-opacity="0"/>
+        </radialGradient>
+        <!-- 湿雾：飘在盘面上那一层的填充。极淡（中心 .18），只在掠过时看得见。 -->
+        <radialGradient id="soul-inkflame-mist" cx="50%" cy="50%" r="50%">
+          <stop offset="0" stop-color="#e8eff5" stop-opacity=".18"/>
+          <stop offset=".48" stop-color="#dbe4ec" stop-opacity=".095"/>
+          <stop offset="1" stop-color="#cfd9e2" stop-opacity="0"/>
+        </radialGradient>
+        <!-- 顶部透光：光从上面来才有体积感 —— 只压在盘的上缘 130px 内。 -->
+        <linearGradient id="soul-inkflame-rim" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#cdd6de" stop-opacity=".14"/>
+          <stop offset=".55" stop-color="#b9c3cc" stop-opacity=".05"/>
+          <stop offset="1" stop-color="#aab4bd" stop-opacity="0"/>
+        </linearGradient>
+        <!-- 湿墨晕：两团极淡的墨，让石头不是一块均匀的塑料板 -->
+        <radialGradient id="soul-inkflame-wash" cx="50%" cy="50%" r="50%">
+          <stop offset="0" stop-color="#0d1114" stop-opacity=".22"/>
+          <stop offset=".55" stop-color="#0d1114" stop-opacity=".10"/>
+          <stop offset="1" stop-color="#0d1114" stop-opacity="0"/>
+        </radialGradient>
+        <!-- 盘面石纹：横向长弧，像石头上的水痕。压得极淡。 -->
+        <pattern id="soul-inkflame-grain" width="180" height="150" patternUnits="userSpaceOnUse">
+          <g fill="none" stroke="#b3bfc7" stroke-linecap="round">
+            <path d="M6 34c46-13 92-11 138 3" stroke-width="1.5" opacity=".055"/>
+            <path d="M20 88c52-16 96-9 146 6" stroke-width="1.1" opacity=".038"/>
+            <path d="M2 128c40-10 82-12 122 1" stroke-width="1.3" opacity=".034"/>
+            <path d="M96 16c30-6 58-4 84 6" stroke-width=".9" opacity=".042"/>
+            <path d="M64 62c34-11 66-7 96 4" stroke-width="1.2" opacity=".03"/>
+          </g>
+        </pattern>
+        <!-- 四角暗角：这一版**大幅收手**（.46 → .26，起步 .56）。
+             上一版靠它"收视线"，代价是整块盘被压成一坨死灰 —— 那正是
+             用户说的"不够通透"。现在只留最外一圈。 -->
+        <radialGradient id="soul-inkflame-vign" cx="50%" cy="46%" r="78%">
+          <stop offset=".56" stop-color="#101418" stop-opacity="0"/>
+          <stop offset=".82" stop-color="#0e1216" stop-opacity=".10"/>
+          <stop offset="1" stop-color="#0a0d10" stop-opacity=".26"/>
+        </radialGradient>
+        <!-- 黑子：近黑（在灰盘上边界清楚）。留一点冷灰的高光，
+             否则整枚子是一块死黑、没有"子是圆的"的体积感。 -->
+        <radialGradient id="soul-inkflame-ink" cx="34%" cy="28%" r="82%">
+          <stop offset="0" stop-color="#3d464d"/><stop offset=".3" stop-color="#1a2025"/>
+          <stop offset=".72" stop-color="#0b0e11"/><stop offset="1" stop-color="#06080a"/>
+        </radialGradient>
+        <!-- 黑子里的**内火**：实心 + 硬边。
+             ⚠ 别改回"淡到边缘透明度归零"的写法 —— 那样边界糊掉，
+             肉眼读到的就是"内火和外轮廓连在一起"（用户原话「没有一段隔离的距离」）。
+             所有 stop 都不带 stop-opacity，最后一档也必须是不透明的。
+             ⚠ 这一版把中心从纯白压到 #f2f7fb：手数（#f2f6f9 + 墨色描边）
+             正好压在它上面，纯白底会把手数的描边吃掉一圈。 -->
+        <radialGradient id="soul-inkflame-inkCore" cx="44%" cy="30%" r="74%">
+          <stop offset="0" stop-color="#f2f7fb"/><stop offset=".52" stop-color="#e6edf3"/>
+          <stop offset="1" stop-color="#bcc7d1"/>
+        </radialGradient>
+        <!-- 白子：素白 + 一圈外发光（参考图里白子明显"亮出来"，比黑子抢眼）。 -->
+        <radialGradient id="soul-inkflame-core" cx="34%" cy="28%" r="84%">
+          <stop offset="0" stop-color="#ffffff"/><stop offset=".46" stop-color="#f8fbfd"/>
+          <stop offset=".84" stop-color="#e6ecf0"/><stop offset="1" stop-color="#c9d3da"/>
+        </radialGradient>
+        <!-- 白子的外发光（画在子底下的一圈柔光）。
+             ⚠ 用户 10-12「周围的光不用太多了」：实测焰边上的有效不透明度
+             顶 .25 / 侧 .21，白子在灰盘上像在"发光"而不是"亮"。
+             收成 .40/.17 并把椭圆从 0.87r×1.18r 收到 0.82r×1.10r 之后，
+             焰边只剩 .10/.14 —— 约减一半，仍留一圈能看出的边光。 -->
+        <radialGradient id="soul-inkflame-coreGlow" cx="50%" cy="50%" r="50%">
+          <stop offset=".62" stop-color="#eef4f8" stop-opacity=".4"/>
+          <stop offset=".82" stop-color="#dfe8ee" stop-opacity=".17"/>
+          <stop offset="1" stop-color="#c9d3da" stop-opacity="0"/>
+        </radialGradient>
+        <!-- 白子里的**内火**：同一朵焰的墨面（"黑白子是同一朵魂火的正负片"的另一半）。
+             ⚠ 中心从 #454f58 提到 #5c6772：手数是 #232b32 的深墨字，
+             压在近黑的内火上两个方向都读不出，提亮到中墨后靠白色描边分家。 -->
+        <radialGradient id="soul-inkflame-coreInk" cx="44%" cy="32%" r="74%">
+          <stop offset="0" stop-color="#5c6772"/><stop offset=".52" stop-color="#28313a"/>
+          <stop offset="1" stop-color="#0b1014"/>
+        </radialGradient>
+        <!-- 当前手的光环：浓墨（浅盘上用暗环） -->
+        <linearGradient id="soul-inkflame-halo" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stop-color="#39424a"/><stop offset=".5" stop-color="#0a0d0e"/>
+          <stop offset="1" stop-color="#5c6871"/>
+        </linearGradient>
+      </defs><path d="M16.4 2.6c.5 3.2 2.3 5.4 4.2 7.2 1.9 1.8 3.1 3.9 3.1 6.3a7.4 7.4 0 0 1-14.8 0c0-1.6.6-3 1.5-4.2.7 1.5 2.1 2.3 3.4 2.2.5 0 .8-.4.7-.9-.6-3.4-1.1-5.8.5-7.9.2 2.1 1 3.7 2.3 4.9-.4-2.6-.6-5.1-.9-7.6Z" fill="url(#soul-inkflame-ink)" stroke="#05070a" stroke-width="0.075" transform="translate(135.00 140.00) scale(7.97129) translate(-16.30 -13.05)"/><path d="M16.4 2.6c.5 3.2 2.3 5.4 4.2 7.2 1.9 1.8 3.1 3.9 3.1 6.3a7.4 7.4 0 0 1-14.8 0c0-1.6.6-3 1.5-4.2.7 1.5 2.1 2.3 3.4 2.2.5 0 .8-.4.7-.9-.6-3.4-1.1-5.8.5-7.9.2 2.1 1 3.7 2.3 4.9-.4-2.6-.6-5.1-.9-7.6Z" fill="url(#soul-inkflame-inkCore)" transform="translate(135.00 140.00) scale(7.97129) translate(-16.30 -13.05) translate(16.3 18.050) scale(0.5 0.5) translate(-16.3 -20)"/><ellipse cx="375.0" cy="140.0" rx="69.70" ry="93.50" fill="url(#soul-inkflame-coreGlow)"/><path d="M16.4 2.6c.5 3.2 2.3 5.4 4.2 7.2 1.9 1.8 3.1 3.9 3.1 6.3a7.4 7.4 0 0 1-14.8 0c0-1.6.6-3 1.5-4.2.7 1.5 2.1 2.3 3.4 2.2.5 0 .8-.4.7-.9-.6-3.4-1.1-5.8.5-7.9.2 2.1 1 3.7 2.3 4.9-.4-2.6-.6-5.1-.9-7.6Z" fill="url(#soul-inkflame-core)" stroke="#8d99a1" stroke-width="0.075" transform="translate(375.00 140.00) scale(7.97129) translate(-16.30 -13.05)"/><path d="M16.4 2.6c.5 3.2 2.3 5.4 4.2 7.2 1.9 1.8 3.1 3.9 3.1 6.3a7.4 7.4 0 0 1-14.8 0c0-1.6.6-3 1.5-4.2.7 1.5 2.1 2.3 3.4 2.2.5 0 .8-.4.7-.9-.6-3.4-1.1-5.8.5-7.9.2 2.1 1 3.7 2.3 4.9-.4-2.6-.6-5.1-.9-7.6Z" fill="url(#soul-inkflame-coreInk)" transform="translate(375.00 140.00) scale(7.97129) translate(-16.30 -13.05) translate(16.3 18.050) scale(0.5 0.5) translate(-16.3 -20)"/><text x="135" y="164" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-size="33" font-weight="700" fill="#f2f6f9" stroke="#05070a" stroke-width="2.5" stroke-linejoin="round" paint-order="stroke">12</text><text x="375" y="164" text-anchor="middle" dominant-baseline="central" font-family="Arial,sans-serif" font-size="33" font-weight="700" fill="#232b32" stroke="#f4f8fb" stroke-width="2.5" stroke-linejoin="round" paint-order="stroke">13</text></svg>

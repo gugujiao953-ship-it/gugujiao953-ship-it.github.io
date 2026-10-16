@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="620" viewBox="0 0 620 620"><defs>
+      <linearGradient id="blue-enamel-base" x1="0" y1="0" x2=".8" y2="1">
+        <stop offset="0" stop-color="#2a56a8"/><stop offset=".35" stop-color="#1b3d84"/>
+        <stop offset=".7" stop-color="#132c66"/><stop offset="1" stop-color="#0c1e4a"/>
+      </linearGradient>
+      <radialGradient id="blue-enamel-glowA" cx="26%" cy="18%" r="64%">
+        <stop offset="0" stop-color="#a8c8ff" stop-opacity=".38"/>
+        <stop offset=".52" stop-color="#4a72c8" stop-opacity=".15"/>
+        <stop offset="1" stop-color="#0c1e4a" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="blue-enamel-glowB" cx="84%" cy="88%" r="60%">
+        <stop offset="0" stop-color="#0a1a44" stop-opacity=".52"/>
+        <stop offset="1" stop-color="#0c1e4a" stop-opacity="0"/>
+      </radialGradient>
+      <!-- 珐琅釉光：一道宽的斜向反光带 -->
+      <linearGradient id="blue-enamel-glaze" x1="0" y1="0" x2=".65" y2="1">
+        <stop offset="0" stop-color="#ffffff" stop-opacity=".22"/>
+        <stop offset=".22" stop-color="#dceaff" stop-opacity=".11"/>
+        <stop offset=".42" stop-color="#ffffff" stop-opacity="0"/>
+        <stop offset=".8" stop-color="#ffffff" stop-opacity="0"/>
+      </linearGradient>
+      <!-- 青花叠色：深浅两遍蓝的笔触感 -->
+      <pattern id="blue-enamel-cobalt" width="44" height="44" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)">
+        <path d="M2 8q11 -7 22 0t22 0" fill="none" stroke="#4a78d0" stroke-width="2.6" opacity=".11"/>
+        <path d="M0 30q11 -7 22 0t22 0" fill="none" stroke="#7fa4e8" stroke-width="1.6" opacity=".09"/>
+      </pattern>
+      <filter id="blue-enamel-soft" x="-8%" y="-8%" width="116%" height="116%">
+        <feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="2" seed="13" result="w"/>
+        <feDisplacementMap in="SourceGraphic" in2="w" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+      <radialGradient id="blue-enamel-Black" cx="34%" cy="24%" r="78%">
+        <stop offset="0" stop-color="#5c8af0"/><stop offset=".26" stop-color="#1e3a7e"/>
+        <stop offset=".62" stop-color="#102552"/><stop offset="1" stop-color="#081638"/>
+      </radialGradient>
+      <radialGradient id="blue-enamel-White" cx="34%" cy="24%" r="76%">
+        <stop offset="0" stop-color="#ffffff"/><stop offset=".30" stop-color="#f4f7ff"/>
+        <stop offset=".66" stop-color="#d4dff8"/><stop offset="1" stop-color="#9db2e0"/>
+      </radialGradient>
+    </defs><rect width="620" height="620" rx="16" fill="url(#blue-enamel-base)"/>
+      <rect x="0" y="0" width="620" height="620" rx="16" fill="url(#blue-enamel-glowA)"/>
+      <rect x="0" y="0" width="620" height="620" rx="16" fill="url(#blue-enamel-cobalt)" filter="url(#blue-enamel-soft)"/>
+      <rect x="0" y="0" width="620" height="620" rx="16" fill="url(#blue-enamel-glowB)"/>
+      <rect class="blue-enamel-glaze" x="0" y="0" width="620" height="620" rx="16" fill="url(#blue-enamel-glaze)"/>
+    <rect x="1" y="1" width="618" height="618" rx="15" fill="none" stroke="#dce8ff" stroke-width="1.6" opacity=".4"/>
+            <rect x="8" y="8" width="604" height="604" rx="11" fill="none" stroke="#6f96e0" stroke-width=".9" opacity=".28"/><path d="M42 42H578 M42 42V578 M42 80.28571428571428H578 M80.28571428571428 42V578 M42 118.57142857142857H578 M118.57142857142857 42V578 M42 156.85714285714286H578 M156.85714285714286 42V578 M42 195.14285714285714H578 M195.14285714285714 42V578 M42 233.42857142857142H578 M233.42857142857142 42V578 M42 271.7142857142857H578 M271.7142857142857 42V578 M42 310H578 M310 42V578 M42 348.2857142857143H578 M348.2857142857143 42V578 M42 386.57142857142856H578 M386.57142857142856 42V578 M42 424.85714285714283H578 M424.85714285714283 42V578 M42 463.14285714285717H578 M463.14285714285717 42V578 M42 501.42857142857144H578 M501.42857142857144 42V578 M42 539.7142857142858H578 M539.7142857142858 42V578 M42 578H578 M578 42V578 " fill="none" stroke="#b4ccf2" stroke-width="1.1" opacity="0.5"/><circle cx="156.85714285714286" cy="156.85714285714286" r="3.5" fill="#eef3ff"/><circle cx="156.85714285714286" cy="463.14285714285717" r="3.5" fill="#eef3ff"/><circle cx="463.14285714285717" cy="156.85714285714286" r="3.5" fill="#eef3ff"/><circle cx="463.14285714285717" cy="463.14285714285717" r="3.5" fill="#eef3ff"/><circle cx="310" cy="310" r="3.5" fill="#eef3ff"/></svg>
