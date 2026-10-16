@@ -15,7 +15,7 @@ window.PORTFOLIO_PROJECTS = [
     "coverStyle": "banbu-phones",
     "featured": true,
     "externalCase": "cases/banbu/index.html",
-    "externalLabel": "阅读完整 34 页设计案例",
+    "externalLabel": "打开原版完整案例（34 页）",
     "intro": "从棋友在手机上打开、研究与练习棋谱的真实场景出发，独立推进需求整理、界面设计、主题视觉、AI 协作实现与用户反馈迭代。设计重点是让棋盘拥有足够空间，让复杂工具保持清晰的操作层级。",
     "facts": [
       [
