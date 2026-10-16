@@ -60,7 +60,7 @@
     const next = projects[(projects.indexOf(project) + 1) % projects.length];
     detail.innerHTML = '<header class="detail-head"><p class="eyebrow">' + project.number + ' / ' + esc(project.categoryLabel) + ' · ' + esc(project.status) + '</p><h2 id="detail-title">' + esc(project.title) + '</h2><p class="detail-intro">' + esc(project.intro) + '</p><dl class="detail-facts">' + project.facts.map(([k,v]) => '<div><dt>' + esc(k) + '</dt><dd>' + esc(v) + '</dd></div>').join('') + '</dl></header><div class="detail-story">' + project.story.map(s => '<section><h3>' + esc(s.title) + '</h3><p>' + esc(s.text) + '</p></section>').join('') + '</div>' + project.sections.map(s => sectionHTML(s, project)).join('') + '<aside class="detail-note"><strong>作品说明与署名</strong>' + esc(project.note) + '</aside><div class="detail-next"><span>继续浏览 / NEXT</span><button data-project="' + next.id + '">' + esc(next.title) + ' ↗</button></div>';
     if (project.externalCase) {
-      const cta = '<div class="detail-cta"><a class="button primary" href="' + esc(project.externalCase) + '" target="_blank" rel="noopener">' + esc(project.externalLabel) + ' <span aria-hidden="true">↗</span></a><span>本页看重点，完整案例看全过程。</span></div>';
+      const cta = '<div class="detail-cta"><a class="button primary" href="' + esc(project.externalCase) + '" target="_blank" rel="noopener">' + esc(project.externalLabel) + ' <span aria-hidden="true">↗</span></a><span>本页为重点概览，原版 34 页案例保留完整过程。</span></div>';
       detail.querySelector('.detail-intro').insertAdjacentHTML('afterend', cta);
     }
     if (project.stats) {
