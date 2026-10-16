@@ -23,7 +23,8 @@
     grid.innerHTML = visible.map(p => {
       const featureLabel = p.featured ? '<span class="featured-label">FEATURED PROJECT / 主推项目</span>' : '';
       const proof = p.featured ? '<span class="featured-proof"><span>独立设计与持续迭代</span><span>34 页完整案例</span><span>真实用户反馈</span></span><span class="featured-cta">查看设计过程与成品 <span aria-hidden="true">↗</span></span>' : '';
-      return '<article class="project-card filter-enter' + (p.compact ? ' compact' : '') + (p.featured ? ' featured' : '') + '"><button class="card-button" data-project="' + p.id + '" aria-label="查看' + esc(p.title) + '项目详情"><span class="card-visual ' + p.coverStyle + '">' + p.cover.map((k, i) => image(k, p.title + '作品预览 ' + (i + 1), true)).join('') + (p.video ? '<span class="play-label">▶ 观看短片 · 02:33</span>' : '') + '</span><span class="card-info">' + featureLabel + '<span class="card-topline"><span class="card-title">' + esc(p.title) + '</span><span class="card-number">' + p.number + '</span></span><span class="card-subtitle">' + esc(p.subtitle) + '</span><span class="card-meta">' + esc(p.label) + '</span>' + proof + '</span></button></article>';
+      const fact = p.facts?.[0] ? '<span class="card-fact"><b>' + esc(p.facts[0][0]) + '</b>' + esc(p.facts[0][1]) + '</span>' : '';
+      return '<article class="project-card filter-enter' + (p.compact ? ' compact' : '') + (p.featured ? ' featured' : '') + '" data-category="' + esc(p.category) + '"><button class="card-button" data-project="' + p.id + '" aria-label="查看' + esc(p.title) + '项目详情"><span class="card-visual ' + p.coverStyle + '">' + p.cover.map((k, i) => image(k, p.title + '作品预览 ' + (i + 1), true)).join('') + (p.video ? '<span class="play-label">▶ 观看短片 · 02:33</span>' : '') + '</span><span class="card-info">' + featureLabel + '<span class="card-topline"><span class="card-title">' + esc(p.title) + '</span><span class="card-number">' + p.number + '</span></span><span class="card-subtitle">' + esc(p.subtitle) + '</span><span class="card-lede">' + esc(p.intro) + '</span><span class="card-meta">' + esc(p.label) + '</span>' + fact + proof + '</span></button></article>';
     }).join('');
     document.querySelector('[data-filter="all"] small').textContent = projects.length;
     document.querySelector('.result-count').textContent = visible.length + ' 个项目';
@@ -32,6 +33,20 @@
       b.classList.toggle('active', selected);
       b.setAttribute('aria-pressed', String(selected));
     });
+    const cards = [...grid.querySelectorAll('.project-card')];
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {rootMargin:'0px 0px -8% 0px'});
+      cards.forEach(card => observer.observe(card));
+    } else {
+      cards.forEach(card => card.classList.add('is-visible'));
+    }
   }
 
   function sectionHTML(section, project) {
@@ -99,7 +114,13 @@
     const projectButton = event.target.closest('[data-project]');
     if (projectButton) { openProject(projectButton.dataset.project); return; }
     const filterButton = event.target.closest('[data-filter]');
-    if (filterButton) { renderGrid(filterButton.dataset.filter); return; }
+    if (filterButton) {
+      renderGrid(filterButton.dataset.filter);
+      if (filterButton.classList.contains('category-card') || filterButton.classList.contains('portal-all')) {
+        document.querySelector('#works').scrollIntoView({behavior:'smooth',block:'start'});
+      }
+      return;
+    }
     const imageButton = event.target.closest('[data-image]');
     if (imageButton) { showImage(lightboxItems.findIndex(i => i[0] === imageButton.dataset.image)); }
   });

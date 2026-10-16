@@ -3,52 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f3ed">
-  <meta name="description" content="肖振的设计作品集：半步五子棋 UI/UX、品牌策划、文化 IP 与儿童文创。以设计判断驱动 AI 辅助创作。">
-  <title>肖振 · 视觉设计与 AI 创作</title>
+  <meta name="theme-color" content="#080b0d">
+  <meta name="description" content="肖振的设计作品集：UI/UX、AI 漫剧、品牌视觉、文化 IP、儿童文创与摄影。">
+  <title>肖振 · 设计作品集</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="revision.css">
+  <link rel="stylesheet" href="immersive.css">
   <script src="media.js" defer></script>
   <script src="projects.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#works">跳至作品</a>
+  <div class="site-noise" aria-hidden="true"></div>
   <header class="site-header">
-    <a class="wordmark" href="#home" aria-label="肖振作品集首页"><span class="mark" aria-hidden="true">Z.</span><span>肖振<span class="wordmark-en">XIAO ZHEN</span></span></a>
-    <nav aria-label="主导航"><a href="#works">精选作品</a><a href="#approach">创作方式</a><a href="#about">关于我</a></nav>
+    <a class="wordmark" href="#home" aria-label="肖振作品集首页"><span class="mark" aria-hidden="true">Z.</span><span>肖振<span class="wordmark-en">XIAO ZHEN / DESIGN PORTFOLIO</span></span></a>
+    <nav aria-label="主导航"><a href="#categories">作品方向</a><a href="#works">全部项目</a><a href="#approach">创作方式</a><a href="#contact">联系</a></nav>
     <a class="header-contact" href="#contact">聊聊设计 <span aria-hidden="true">↗</span></a>
   </header>
+
   <main id="home">
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span>视觉设计 · AI 辅助创作</p>
-        <h1 id="hero-title">让想法，<br>有自己的<span class="hero-em">样子<span class="spark" aria-hidden="true">✳</span></span>。</h1>
-        <p class="hero-intro">我是肖振，工艺美术专业。<br>用 AI 协助设计，让视觉、交互与文化表达一起落地。</p>
-        <div class="hero-actions"><button class="button primary" data-project="banbu">查看半步设计案例 <span aria-hidden="true">↗</span></button><a class="hero-secondary" href="#works">全部作品 ↓</a></div>
-        <div class="hero-index"><span>01 — 11</span><span>UI / 品牌 / 文创 / 影像</span></div>
+    <section class="immersive-hero" aria-labelledby="hero-title">
+      <div class="hero-orbit orbit-one" aria-hidden="true"></div><div class="hero-orbit orbit-two" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span>VISUAL DESIGN · AI-ASSISTED CREATION</p>
+        <h1 id="hero-title">把不同的想法，<br><em>做成看得见的作品。</em></h1>
+        <p class="hero-intro">我是肖振，工艺美术专业设计者。<br>关注 UI/UX、品牌视觉、AI 漫剧与文化文创，使用 AI 辅助研究、探索和实现。</p>
+        <div class="hero-actions"><a class="button primary" href="#categories">选择作品方向 <span aria-hidden="true">↓</span></a><a class="hero-secondary" href="#works">向下浏览全部项目 <span aria-hidden="true">↘</span></a></div>
+        <div class="hero-index"><span>SELECT / 12</span><span>UI / UX · AI FILM · BRAND · CULTURE</span></div>
       </div>
-      <div class="hero-art hero-art-revised" aria-label="主推设计项目预览"><div class="art-caption"><span>DESIGN IN PRACTICE</span><span>SELECTED PROJECTS</span></div><button class="hero-poster poster-main" data-project="banbu" aria-label="查看半步五子棋产品与界面设计"><img src="assets/banbu-suite-dunhuang.webp" alt="半步五子棋的敦煌主题界面" fetchpriority="high"><span>01 / 产品与界面设计 ↗</span></button><button class="hero-poster poster-back" data-project="starlight" aria-label="查看画里星芒 AI 漫剧项目"><img src="assets/a026-sm.webp" alt="画里星芒 AI 漫剧关键画面"><span>02 / AI 漫剧与影像 ↗</span></button><button class="hero-poster poster-front" data-project="yingxian" aria-label="查看应县木塔守护灵"><img src="assets/n004-sm.webp" alt="应县木塔守护灵角色设计展板"><span>03 / 文化与 IP ↗</span></button><span class="art-note">From idea to experience.</span><div class="roundel" aria-hidden="true">DESIGN<br><span>×</span><br>AI</div></div>
+      <div class="hero-stage" aria-label="作品类型预览">
+        <div class="hero-stage-label">XIAO ZHEN / SELECTED WORKS <span>2026</span></div>
+        <div class="hero-stage-main"><img src="assets/a026.webp" alt="画里星芒 AI 漫剧关键画面" fetchpriority="high"><span class="stage-tag">01 / AI 漫剧</span></div>
+        <div class="hero-stage-side"><img src="assets/yingxian-cover.webp" alt="应县木塔守护灵角色设计"><span>03 / 文化与 IP</span></div>
+        <div class="hero-stage-bottom"><img src="assets/yipin-logo.webp" alt="一品忘忧品牌 Logo"><span>02 / 品牌视觉</span></div>
+        <span class="hero-stage-note">FROM IDEA<br>TO EXPERIENCE</span>
+      </div>
     </section>
-    <div class="discipline-strip"><div class="wrap"><span>从概念到体验</span><span>UI / UX</span><span>品牌策划</span><span>文化与 IP</span><span>儿童文创</span><span aria-hidden="true">↙</span></div></div>
+
+    <section class="category-portal wrap" id="categories" aria-labelledby="categories-title">
+      <div class="portal-heading"><div><p class="eyebrow">CHOOSE A DIRECTION / 作品方向</p><h2 id="categories-title">先选你想看的，<br><em>再进入作品。</em></h2></div><p>作品投递方向较多，<br>按类型快速浏览。</p></div>
+      <div class="category-grid">
+        <button class="category-card category-digital" data-filter="digital" aria-label="浏览 UI/UX 与产品设计作品"><span class="category-image"><img src="assets/banbu-record-sm.webp" alt="移动端 UI/UX 界面"></span><span class="category-copy"><span class="category-kicker">01 / PRODUCT DESIGN</span><strong>UI / UX 与产品</strong><small>移动端界面 · 交互 · 主题视觉</small><i aria-hidden="true">↗</i></span></button>
+        <button class="category-card category-media" data-filter="media" aria-label="浏览 AI 漫剧与影像作品"><span class="category-image"><img src="assets/a026-sm.webp" alt="AI 漫剧画里星芒关键画面"></span><span class="category-copy"><span class="category-kicker">02 / AI STORYTELLING</span><strong>AI 漫剧与影像</strong><small>角色场景 · 叙事镜头 · 成片协作</small><i aria-hidden="true">↗</i></span></button>
+        <button class="category-card category-brand" data-filter="brand" aria-label="浏览品牌视觉与包装作品"><span class="category-image"><img src="assets/yipin-logo-sm.webp" alt="一品忘忧品牌 Logo"></span><span class="category-copy"><span class="category-kicker">03 / BRAND SYSTEM</span><strong>品牌与包装</strong><small>定位 · 标志 · IP · 包装延展</small><i aria-hidden="true">↗</i></span></button>
+        <button class="category-card category-culture" data-filter="culture" aria-label="浏览文化 IP 作品"><span class="category-image"><img src="assets/yingxian-cover-sm.webp" alt="应县木塔守护灵文化 IP"></span><span class="category-copy"><span class="category-kicker">04 / CULTURAL IP</span><strong>文化与 IP</strong><small>元素提取 · 角色系统 · 文创转译</small><i aria-hidden="true">↗</i></span></button>
+        <button class="category-card category-children" data-filter="children" aria-label="浏览儿童文创作品"><span class="category-image"><img src="assets/n174-sm.webp" alt="豚宝聚财罐儿童文创设计"></span><span class="category-copy"><span class="category-kicker">05 / CULTURAL PRODUCT</span><strong>儿童文创</strong><small>节气 IP · 产品概念 · 场景表达</small><i aria-hidden="true">↗</i></span></button>
+        <button class="category-card category-graphic" data-filter="graphic" aria-label="浏览平面视觉作品"><span class="category-image"><img src="assets/r02-sm.webp" alt="平面视觉系列海报"></span><span class="category-copy"><span class="category-kicker">06 / VISUAL GRAPHICS</span><strong>平面视觉</strong><small>海报 · 构图 · 色彩 · 视觉叙事</small><i aria-hidden="true">↗</i></span></button>
+      </div>
+      <button class="portal-all" data-filter="all">查看全部 12 个项目 <span aria-hidden="true">↓</span></button>
+    </section>
+
     <section class="works wrap" id="works" aria-labelledby="works-title">
-      <div class="section-heading"><div><p class="eyebrow">SELECTED WORK / 精选作品</p><h2 id="works-title">设计，落在具体的作品里。</h2></div><p>个人项目、品牌策划与文化转译，<br>让设计思路和最终成果相互印证。</p></div>
-      <div class="filter-row"><div class="filters" role="group" aria-label="作品分类"><button class="filter active" data-filter="all" aria-pressed="true">全部作品 <small>11</small></button><button class="filter" data-filter="digital" aria-pressed="false">UI / UX</button><button class="filter" data-filter="brand" aria-pressed="false">品牌策划</button><button class="filter" data-filter="culture" aria-pressed="false">文化与 IP</button><button class="filter" data-filter="children" aria-pressed="false">儿童文创</button><button class="filter" data-filter="graphic" aria-pressed="false">平面视觉</button><button class="filter" data-filter="media" aria-pressed="false">影像与摄影</button></div><span class="result-count" aria-live="polite">11 个项目</span></div>
+      <div class="section-heading"><div><p class="eyebrow">PROJECTS / 全部项目</p><h2 id="works-title">向下滚动，完整看完我的作品。</h2></div><p>按时间与主题展开。<br>每个项目都保留图片、说明和署名。</p></div>
+      <div class="filter-row"><div class="filters" role="group" aria-label="作品分类"><button class="filter active" data-filter="all" aria-pressed="true">全部作品 <small>12</small></button><button class="filter" data-filter="digital" aria-pressed="false">UI / UX</button><button class="filter" data-filter="media" aria-pressed="false">AI 漫剧</button><button class="filter" data-filter="brand" aria-pressed="false">品牌策划</button><button class="filter" data-filter="culture" aria-pressed="false">文化与 IP</button><button class="filter" data-filter="children" aria-pressed="false">儿童文创</button><button class="filter" data-filter="graphic" aria-pressed="false">平面视觉</button></div><span class="result-count" aria-live="polite">12 个项目</span></div>
       <div class="project-grid" id="project-grid"></div>
       <noscript><p>请启用 JavaScript 以浏览项目分类和作品详情。作品图片保存在本页面同目录的 assets 文件夹。</p></noscript>
-      <p class="gallery-footnote">作品按主题重新编排。项目详情保留课程、概念练习及团队分工说明。</p>
+      <p class="gallery-footnote">向下滚动可连续浏览全部项目；点击任意项目进入完整说明和图片。</p>
     </section>
+
     <section class="approach" id="approach" aria-labelledby="approach-title"><div class="wrap">
       <div class="section-heading"><div><p class="eyebrow">HOW I CREATE / 创作方式</p><h2 id="approach-title">用 AI 扩展方案，<br>用设计判断做选择。</h2></div><p>工具让探索更快。<br>主题、审美与表达，由我把关。</p></div>
-      <div class="process-grid"><article><span class="step-number">01</span><h3>先把问题想清楚</h3><p>梳理受众、主题与信息层级，借助 AI 辅助资料整理、创意发散与文案推敲。</p><span>主题梳理 / 概念提炼</span></article><article><span class="step-number">02</span><h3>让方向看得见</h3><p>把关键词转化为视觉方案，探索构图、色彩、角色和场景，比较不同方向的表达效果。</p><span>视觉探索 / 图像生成</span></article><article><span class="step-number">03</span><h3>回到设计细节</h3><p>结合 Photoshop 等设计工具处理图像与版式，关注风格一致性、信息可读性和最终呈现。</p><span>筛选整合 / 排版与修正</span></article></div>
-      <div class="tools-line"><span>常用协作工具</span><p>Photoshop · Figma · GPT · Stable Diffusion · ComfyUI · Midjourney · 可灵</p></div>
+      <div class="process-grid"><article><span class="step-number">01</span><h3>先把问题想清楚</h3><p>梳理受众、主题与信息层级，借助 AI 辅助资料整理、创意发散与文案推敲。</p><span>主题梳理 / 概念提炼</span></article><article><span class="step-number">02</span><h3>让方向看得见</h3><p>把关键词转化为视觉方案，探索构图、色彩、角色和场景，比较不同方向的表达效果。</p><span>视觉探索 / 图像生成</span></article><article><span class="step-number">03</span><h3>回到设计细节</h3><p>结合 Figma、Photoshop 等设计工具处理界面、图像与版式，关注风格一致性、信息可读性和最终呈现。</p><span>筛选整合 / 排版与修正</span></article></div>
+      <div class="tools-line"><span>常用协作工具</span><p>Photoshop · Figma · GPT · Image 2.5 · Nano Banana 2.1 · ComfyUI · Midjourney · 可灵</p></div>
     </div></section>
-    <section class="about wrap" id="about" aria-labelledby="about-title">
-      <div class="about-label"><p class="eyebrow">A LITTLE ABOUT ME</p><span class="big-z" aria-hidden="true">Z<span>✳</span></span></div>
-      <div class="about-main"><h2 id="about-title">设计出发，<br>保持跨界的好奇心。</h2><p class="about-lead">肖振 / 长沙师范学院 · 工艺美术本科</p><p>关注 UI / UX、品牌策划与文创产品设计。从半步的真实使用反馈，到文化元素的提取与转译，我希望用 AI 协助探索方案，并通过自己的设计判断把概念组织成完整体验。</p><div class="ability-tags"><span>品牌概念与视觉延展</span><span>海报与图像设计</span><span>AI 角色与场景探索</span><span>UI / UX 与主题视觉</span><span>Figma / PS 协作</span></div>
-      <aside class="side-project"><span class="eyebrow">DESIGN & DELIVERY / 设计与交付</span><h3>从一个好想法，到一套完整表达。</h3><p>我把工具放在具体任务里使用：辅助整理策略与概念、探索图形和场景、推敲界面与交互，再把结果整理成可沟通、可展示、可继续迭代的设计成果。</p><div class="ability-tags"><span>概念与策略</span><span>视觉系统</span><span>交互体验</span><span>AI 协作与验收</span></div></aside></div>
-    </section>
-    <section class="contact wrap" id="contact" aria-labelledby="contact-title"><div><p class="eyebrow">LET’S MAKE SOMETHING</p><h2 id="contact-title">期待下一次，<br>把想法变成好设计。</h2><p>求职方向：UI / UX · 视觉设计 · 品牌设计 · AIGC 设计</p></div><div class="contact-actions"><a class="button primary" href="肖振_个人简历.docx" download>下载我的简历 <span aria-hidden="true">↓</span></a><a class="phone-link" href="tel:19207474639">192 0747 4639 <span aria-hidden="true">↗</span></a><span>肖振 · 联系电话</span></div></section>
+
+    <section class="about wrap" id="about" aria-labelledby="about-title"><div class="about-label"><p class="eyebrow">A LITTLE ABOUT ME</p><span class="big-z" aria-hidden="true">Z<span>✳</span></span></div><div class="about-main"><h2 id="about-title">设计出发，<br>保持跨界的好奇心。</h2><p class="about-lead">肖振 / 长沙师范学院 · 工艺美术本科</p><p>关注 UI/UX、品牌策划、AI 漫剧与文创产品设计。从真实使用反馈，到文化元素的提取与转译，我希望用 AI 协助探索方案，并通过自己的设计判断把概念组织成完整体验。</p><div class="ability-tags"><span>UI / UX 与主题视觉</span><span>品牌概念与视觉延展</span><span>AI 漫剧与影像协作</span><span>文化 IP 与儿童文创</span><span>Figma / PS 协作</span></div><aside class="side-project"><span class="eyebrow">DESIGN & DELIVERY / 设计与交付</span><h3>从一个好想法，到一套完整表达。</h3><p>我把工具放在具体任务里使用：辅助整理策略与概念、探索图形和场景、推敲界面与交互，再把结果整理成可沟通、可展示、可继续迭代的设计成果。</p></aside></div></section>
+    <section class="contact wrap" id="contact" aria-labelledby="contact-title"><div><p class="eyebrow">LET’S MAKE SOMETHING</p><h2 id="contact-title">期待下一次，<br>把想法变成好设计。</h2><p>求职方向：UI/UX · 视觉设计 · 品牌设计 · AI 漫剧与 AIGC</p></div><div class="contact-actions"><a class="button primary" href="肖振_个人简历.docx" download>下载我的简历 <span aria-hidden="true">↓</span></a><a class="phone-link" href="tel:19207474639">192 0747 4639 <span aria-hidden="true">↗</span></a><span>肖振 · 联系电话</span></div></section>
   </main>
   <footer class="site-footer wrap"><a class="wordmark" href="#home"><span class="mark">Z.</span><span>肖振的设计作品集</span></a><span>2026 · 课程与个人作品选集</span><a href="#home">回到顶部 ↑</a></footer>
   <dialog id="project-dialog" class="project-dialog" aria-labelledby="detail-title"><div class="dialog-toolbar"><span>PROJECT DETAILS / 作品详情</span><button class="icon-button close-project" aria-label="关闭项目详情">✕</button></div><div id="detail-content"></div></dialog>
