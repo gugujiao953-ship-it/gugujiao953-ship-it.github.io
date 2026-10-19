@@ -25,7 +25,24 @@
       const proof = p.featured ? '<span class="featured-proof"><span>独立设计与持续迭代</span><span>34 页完整案例</span><span>真实用户反馈</span></span><span class="featured-cta">查看设计过程与成品 <span aria-hidden="true">↗</span></span>' : '';
       const fullCaseLink = p.externalCase ? '<a class="card-case-link" href="' + esc(p.externalCase) + '" onclick="event.stopPropagation()">直接翻完整 34 页案例 <span aria-hidden="true">↗</span></a>' : '';
       const fact = p.facts?.[0] ? '<span class="card-fact"><b>' + esc(p.facts[0][0]) + '</b>' + esc(p.facts[0][1]) + '</span>' : '';
-      return '<article class="project-card filter-enter' + (p.compact ? ' compact' : '') + (p.featured ? ' featured' : '') + '" data-category="' + esc(p.category) + '"><span class="card-button-wrap"><button class="card-button" data-project="' + p.id + '" aria-label="查看' + esc(p.title) + '项目详情"><span class="card-visual ' + p.coverStyle + '">' + p.cover.map((k, i) => image(k, p.title + '作品预览 ' + (i + 1), true)).join('') + (p.video ? '<span class="play-label">▶ 观看短片 · 02:33</span>' : '') + '</span><span class="card-info">' + featureLabel + '<span class="card-topline"><span class="card-title">' + esc(p.title) + '</span><span class="card-number">' + p.number + '</span></span><span class="card-subtitle">' + esc(p.subtitle) + '</span><span class="card-lede">' + esc(p.intro) + '</span><span class="card-meta">' + esc(p.label) + '</span>' + fact + proof + '</span></button>' + fullCaseLink + '</span></article>';
+      // 让卡片自己说明"里面还有多少" —— 不用点开也能看到后续内容
+      const allItems = (p.sections || []).flatMap(s => s.images || []);
+      const coverKeys = new Set(p.cover || []);
+      const seenKeys = new Set();
+      const thumbs = allItems
+        .filter(([k]) => !coverKeys.has(k))
+        .filter(([k]) => (seenKeys.has(k) ? false : (seenKeys.add(k), true)))
+        .slice(0, 3);
+      const totalImgs = new Set(allItems.map(([k]) => k)).size;
+      const sectionCount = (p.sections || []).length;
+      const thumbStrip = thumbs.length
+        ? '<span class="card-thumbs" aria-hidden="true">' + thumbs.map(([k, alt]) => image(k, alt, true)).join('') + '</span>'
+        : '';
+      const depth = '<span class="card-depth"><b>' + totalImgs + '</b> 张过程图' +
+        (sectionCount ? ' · <b>' + sectionCount + '</b> 个小节' : '') +
+        (p.externalCase ? ' · <b>34</b> 页完整案例' : '') + '</span>';
+      const openCue = '<span class="card-open">点开看完整过程 <span aria-hidden="true">↗</span></span>';
+      return '<article class="project-card filter-enter' + (p.compact ? ' compact' : '') + (p.featured ? ' featured' : '') + '" data-category="' + esc(p.category) + '"><span class="card-button-wrap"><button class="card-button" data-project="' + p.id + '" aria-label="查看' + esc(p.title) + '项目详情，共 ' + totalImgs + ' 张图"><span class="card-visual ' + p.coverStyle + '">' + p.cover.map((k, i) => image(k, p.title + '作品预览 ' + (i + 1), true)).join('') + (p.video ? '<span class="play-label">▶ 观看短片 · 02:33</span>' : '') + '</span><span class="card-info">' + featureLabel + '<span class="card-topline"><span class="card-title">' + esc(p.title) + '</span><span class="card-number">' + p.number + '</span></span><span class="card-subtitle">' + esc(p.subtitle) + '</span><span class="card-lede">' + esc(p.intro) + '</span><span class="card-meta">' + esc(p.label) + '</span>' + fact + proof + thumbStrip + depth + openCue + '</span></button>' + fullCaseLink + '</span></article>';
     }).join('');
     document.querySelector('[data-filter="all"] small').textContent = projects.length;
     document.querySelector('.result-count').textContent = visible.length + ' 个项目';

@@ -75,3 +75,16 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-3;bac
 @media(min-width:561px) and (max-width:900px){
   .featured .card-info{padding-bottom:70px}
 }
+
+/* ===== 卡片自身说明"里面还有多少内容" ===== */
+.card-thumbs{display:flex;gap:8px;margin-top:18px}
+.card-thumbs img{width:76px;height:52px;object-fit:cover;border:1px solid #2f3d40;background:#0d1416;opacity:.9;transition:opacity .25s,border-color .25s,transform .25s}
+.card-button:hover .card-thumbs img{opacity:1;border-color:#9bc5b480;transform:translateY(-2px)}
+.card-depth{display:block;margin-top:14px;color:#8fa39d;font-size:10px;letter-spacing:.3px}
+.card-depth b{color:var(--acid);font-weight:600;font-size:12px;margin:0 1px}
+.card-open{display:inline-flex;align-items:center;gap:7px;margin-top:10px;color:var(--acid);font-size:10px;letter-spacing:.5px}
+.card-open>span{transition:transform .25s}
+.card-button:hover .card-open>span{transform:translate(3px,-3px)}
+.featured .card-thumbs img{width:92px;height:62px}
+@media(max-width:900px){.card-thumbs img{width:70px;height:48px}.featured .card-thumbs img{width:78px;height:54px}}
+@media(max-width:560px){.card-thumbs{gap:6px;margin-top:14px}.card-thumbs img{width:64px;height:44px}.featured .card-thumbs{gap:6px}.featured .card-thumbs img{width:62px;height:42px}}
