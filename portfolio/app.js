@@ -25,7 +25,7 @@
       const proof = p.featured ? '<span class="featured-proof"><span>独立设计与持续迭代</span><span>34 页完整案例</span><span>真实用户反馈</span></span><span class="featured-cta">查看设计过程与成品 <span aria-hidden="true">↗</span></span>' : '';
       const fullCaseLink = p.externalCase ? '<a class="card-case-link" href="' + esc(p.externalCase) + '" onclick="event.stopPropagation()">直接翻完整 34 页案例 <span aria-hidden="true">↗</span></a>' : '';
       const fact = p.facts?.[0] ? '<span class="card-fact"><b>' + esc(p.facts[0][0]) + '</b>' + esc(p.facts[0][1]) + '</span>' : '';
-      // 让卡片自己说明"里面还有多少" —— 不用点开也能看到后续内容
+      // 让卡片自己说明"里面还有多少" —— 缩略图用 data-src 延迟加载，不进首屏请求队列
       const allItems = (p.sections || []).flatMap(s => s.images || []);
       const coverKeys = new Set(p.cover || []);
       const seenKeys = new Set();
@@ -36,7 +36,12 @@
       const totalImgs = new Set(allItems.map(([k]) => k)).size;
       const sectionCount = (p.sections || []).length;
       const thumbStrip = thumbs.length
-        ? '<span class="card-thumbs" aria-hidden="true">' + thumbs.map(([k, alt]) => image(k, alt, true)).join('') + '</span>'
+        ? '<span class="card-thumbs" aria-hidden="true">' + thumbs.map(([k, alt]) => {
+            const a = media[k];
+            if (!a) return '';
+            const src = a.thumb || a.src;
+            return '<img data-src="' + src + '" width="76" height="52" alt="" loading="lazy" decoding="async">';
+          }).join('') + '</span>'
         : '';
       const depth = '<span class="card-depth"><b>' + totalImgs + '</b> 张过程图' +
         (sectionCount ? ' · <b>' + sectionCount + '</b> 个小节' : '') +
@@ -62,8 +67,23 @@
         });
       }, {rootMargin:'0px 0px -8% 0px'});
       cards.forEach(card => observer.observe(card));
+
+      // 缩略图条：进入视口才真正请求图片，避免首屏被几十张小图挤占带宽
+      const thumbImgs = [...grid.querySelectorAll('.card-thumbs img[data-src]')];
+      if (thumbImgs.length) {
+        const thumbObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const img = entry.target;
+            if (img.dataset.src && !img.src) img.src = img.dataset.src;
+            thumbObserver.unobserve(img);
+          });
+        }, {rootMargin: '300px 0px'});
+        thumbImgs.forEach(img => thumbObserver.observe(img));
+      }
     } else {
       cards.forEach(card => card.classList.add('is-visible'));
+      grid.querySelectorAll('.card-thumbs img[data-src]').forEach(img => { img.src = img.dataset.src; });
     }
   }
 
